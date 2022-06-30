@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Proseminar Web Engineering im Sommersemester 2014 - Store in the Cloud or not in the Cloud</title>
+  <title>Seminar Web Engineering in Summer Semester 2022 - Extracting Contentual Knowledge from Linked Data</title>
   <link rel="stylesheet" type="text/css" href="main.css"/>
   <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
@@ -9,17 +9,17 @@
 </head>
 <body>
     <header>
-        <h2>Proseminar Web Engineering im Sommersemester 2022</h2>
-		<h1>Extracting Contentual Knowledge from Linked Data</h1>
+        <h2>Seminar Web Engineering in Summer Semester 2022</h2>
+		<h1>Extracting Contentual Knowledge From Linked Data</h1>
         <h2 class="author">Anne Seitz</h2>
 		<h3 class="affiliation">
-			Professur Verteilte und Selbstorganisierende Rechnersysteme<br/>
-			Technische Universität Chemnitz<br/>
-			Chemnitz, Deutschland
+			Master's Student of Web Engineering<br/>
+			Technical University Of Chemnitz<br/>
+			Chemnitz, Germany
 		</h3>
     </header>
     <section>
-    	<h2>1. Einleitung</h2>
+    	<h2>1. Introduction</h2>
         <p> 
     		The steady development drift of Linked Data (LD) is broadening the potential expansion of datasets for improving the search engine available on the web, where, the accessibility of information in Semantic Web groups such as RDF and OWL has also expanded. By the by, the information that is right now accessible constitutes hfair a division of existing data that can be uncovered and conveyed as RDF and OWL. Current investigation and built-up Web look firms like Google and Powerset are advantages of utilizing unequivocal semantics and LD to refine look results.
     	</p>
@@ -31,113 +31,140 @@
     	</p>
 	</section>
     <section>
-    	<h2> 2. Approach</h2>
-    	
+    	<h2> 2. Knowledge Extraction</h2>
+    	<h3> 2.1. Defination</h3>
     		
     	<p>
-            Linked Data integrate types and properties defined in in-houseontologies, or in widespread existing ones e.g. DC5, GeoNames6 or FOAF4. It may happen, in spite of the fact that, that in-house ontologies have not been formalized, or are not unveiled. Even when the ontologies are existing, they can not identify which related part of them is utilised in a dataset, and what links are draw (through the data) between entities across various ontologies. 
-            
+            Knowledge extraction is the creation of information from organized (social databases, XML) and unstructured (content, archives, pictures) sources. The coming about information has to be in a machine-readable and machine-interpretable arrange
+            and must speak to information in a way that encourages inferencing. In spite of the fact that it is deliberately comparable to data extraction (NLP) and ETL (information distribution center), the most measure is that the extraction result goes past the creation of organized data or the change into a social pattern. It requires either the reuse of existing formal information (reusing identifiers or ontologies) or the era of a pattern based on the source information.
+            <a href="#r3">[3]</a>.
     	</p>
     	<p>
-            Knowing this data around a dataset could be a pre-condition for assessing its adequateness for being reused in a specific setting, for assessing its content, for joining it with other (possibly legacy) knowledge; in other words, for utilizing it. We hypothesize that utilizing KPs for examining and conceivably creating LD addresses this problem.Further, we'll talk about questioning a dataset when its lexicon is unknown, by continuing as follows:
+            In show disdain toward of the reality that the term data extraction is broadly utilized inside the composing, no studies exist that have succeeded in making a framework to cover unstructured as well as organized sources or allow a clear definition of the basic “triplification“ get ready and the required prerequisites. Other frameworks and overviews as well as individual approaches especially require the taking after points such as 
+            clear boundaries to existing examine districts such as Information Extraction (Content Mining), Extract-Transform-Load (Data Stockroom) and Cosmology Learning have not in any case been built up. Such boundaries are characterized by expressing unmistakable criteria conjointly by demonstrating the meaning of information w.r.t. the foremost data appear of our concern, RDF and OWL (see another thing). 
+            The next point will be The thought that ”knowledge“ is removed has not been well-defined. In spite of the fact that, RDF and OWL can serve as data representation formalisms, the simple utilization of RDF/OWL as a organize can not satisfactorily characterize the thought of ”knowledge“. The foremost questions are: “What is the result of a triplification process?” “Structured data or talked to knowledge?”, “When does organized data gotten to be knowledge?”.
+            And then in show disdain toward of the reality that, the extend of extraction of RDF from social databases has been been examined broadly, approaches were scarcely comparable to extraction procedures utilized on other sources, in this way maintaining a strategic distance from theory.
+            In the last most individual approaches were driven by uncommonly specific utilize cases that came with a specific data source and required the alter into RDF and, hence, are lost a more common see on the issue. The foremost questions were: “What are the properties of such a transformation?” and “How do they differentiate from past efforts?” 
+            <a href="#r7">[7]</a>.
     	</p>
-    	<ul>
-            <li>
-            we characterize a strategy and a philosophy for analyzing a dataset and producing an amalgamation of it, that is, a measured reflection named dataset information architecture, that highlights how dataset information is organized, and what its core information components (e.g. central sorts and related KPs) are;
-            </li>
-            <li>
-                We describe how this general method and ontology can be misused for distinguishing foremost KPs extracted from a dataset for creating prototypical questions, through which we can recover a dataset core information.
-            </li>
-        </ul>
+    	<p>
+            For the RDF and the OWL information demonstrate, able to distinguish two distinctive criteria for distinguishing Information Extraction forms: Reusing identifiers. (1) generated RDF properties are universally special and have a well-defined meaning. If de-facto standard vocabularies, for case FOAF3 , are reused, at that point the extracted RDF can be unambiguously related to other information within the Web of Information. (2) owl:sameAs or owl:equivalentClass connecting of extricated substances to existing entities within the Web of Information.
+            <a href="#r8">[8]</a>.
+    	</p>
+        <p>
+            Construction era. Construction (or Philosophy) era from bequest sources is a weaker shape of information extraction when compared to reusing identifiers. In spite of the fact that pecking orders [4] or OWL/DL maxims of shifting expressivity are generated (see [3] for era of subclass relations from databases and [13] for generating expressive maxims from content) no disambiguation is made by connecting the newly created classes to existing ontologies. The connection of the created scientific classification of terms remains vague and requires strategies from the field of cosmology matching to ended up portion of the worldwide arrange of information.
+            <a href="#r8">[8]</a>. 
+        </p>	
+        <figure>
+        <pre>
+function createAndSendDocument() {
+  // Create a new Google Doc named 'Hello, world!'
+  var doc = DocumentApp.create('Hello, world!');
 
-    <section>
-    	<h3>2.2. Datenschutz und -sicherheit</h3>
-    	<p>
-        Bei solchen hohen Nutzerzahlen haben beide Anbieter eine große Verantwortung bezüglich der Sicherheit der Daten. Dazu zählen natürlich angemessene
-        Datenschutzrichtlinien und Verschlüsselungstechniken, aber auch die Ermutigung und Aufklärung des Anwenders den eigenen Account so einbruchssicher wie
-        möglich zu gestalten. Dies beginnt schon bei der Registrierung, nämlich mit der Festlegung eines starken Passworts.
-    	</p>
-    	<p>
-        Beide Dienste weisen bei der Registrierung auf die Stärke des Passworts mit Hilfe eines Farbbalkens hin. Die Einstufung erhöht sich je länger die Eingabe
-        wird und je mehr zwischen Groß- und Kleinschreibung, Zahlen und Sonderzeichen variiert wird <a href="#r3">[3]</a>. Zusätzlich wird von beiden die zweistufige Verifizierung stark
-        empfohlen, bei der nicht nur Username und Passwort, sondern ein zusätzlicher Pin ans Handy gesendet wird, um sicherzustellen, dass es sich wirklich um
-        den bestimmten Nutzer handelt. Aber auch hier unterscheiden sich Google und Dropbox in den Details der Umsetzung. Während Dropbox diesen Code entweder per SMS verschickt
-        oder über eine App generieren lässt <a href="#r7">[7]</a>, bietet Google zusätzlich die Übermittlung per Sprachanruf und die Variante der Backup-Codes an <a href="#r8">[8]</a>. Letztere sind vor
-        allem nützlich, wenn das Smartphone bzw. der Empfang gerade nicht zur Hand ist.
-    	</p>
-    	<p>
-        Der nächste wichtige Sicherheitsaspekt ist die Übertragung der Daten. Diese findet bei beiden selbstverständlich über SSL/TSL und HTTPS statt. Danach
-        findet die serverseitige Verschlüsselung über AES-256 bei Dropbox <a href="#r7">[7]</a> und AES-128 bei Google <a href="#r8">[8]</a> statt. Beide verschlüsseln die Daten
-        jedoch mit eigenen generierten Schlüsseln, was zu der Kritik führt, dass „[s]ince Dropbox itself encrypts the data on the server-side, users cannot be sure
-        by cryptographic means that all stored data is highly confidential“ <a href="#r3">[3]</a>. Über Google ist die Kritik sogar noch lauter, denn hier wird
-        erst seit gut einem Jahr serverseitig verschlüsselt <a href="#r1">[1]</a>. Zuvor wiesen Mitarbeiter des GoogleDrive Team
-        nur auf die sichere Kommunikation zwischen Server und Client hin bzw. machten auf den Gebrauch der zwei-Schritt-Verifizierung aufmerksam <a href="#r1">[1]</a>. 
-    	Dass die Schlüssel jedoch selbst generiert und verwaltet werden, sorgt auch hier für Unwohlsein <a href="#r1">[1]</a>.
-    	</p>
-    	<p>
-        Aus diesem Problem hat sich ein ganz eigener Markt entwickelt. Dropbox selbst weist in ihrem Helpcenter auf „zahlreiche Drittanbieter“ <a href="#r7">[7]</a>
-        hin, mit Hilfe welcher Anwender ihre Daten selber verschlüsseln können, bevor sie diese in die Cloud hochladen. Auch Borgmann et al. kommen zu dem Schluss,
-        dass es „a whole range of alternative methods“<a href="#r3">[3]</a> gibt, um die eigenen Daten schon lokal zu verschlüsseln und selber die Schlüssel zu verwalten. Einer
-        dieser Anbieter ist Boxcryptor, 2011 gegründet und mit mittlerweile über 1 Millionen Downloads oft genutzt <a href="#r4">[4]</a>.
-    	</p>
-    	<p>
-        Boxcryptor ist eine Anwendung die speziell zur Verschlüsselung von Daten, welche anschließend in der Cloud gespeichert werden sollen, entwickelt wurde. Das
-        Prinzip ist recht simpel. Die zu verschlüsselnden Daten werden in einem entsprechenden Ordner auf einem virtuellen Laufwerk abgelegt und dort mit Hilfe der
-        AES-256 und RSA Algorithmen verschlüsselt. Danach erst werden die Dateien in den Cloud Ordner weitergegeben. Verschlüsselte Daten sind farblich markiert
-        und leicht von anderen, nicht verschlüsselten Daten, zu unterscheiden. Diese Software ist kompatibel mit allen großen Cloud Dienst Anbietern und allen Betriebssystemen. Auch für Android, iOS und
-        Blackberry gibt es Apps, sodass hier ebenfalls keine Einschränkung besteht <a href="#r4">[4]</a>.
-    	</p>
+  // Access the body of the document, then add a paragraph.
+  doc.getBody().appendParagraph('This document was created ');
+
+  // Get the URL of the document.
+  var url = doc.getUrl();
+
+  // Get the email address of the active user - that's you.
+  var email = Session.getActiveUser().getEmail();
+
+  // Get the name of the document to use as an email subject line.
+  var subject = doc.getName();
+
+  // Append a new string to the "url" variable to use as an email.
+  var body = 'Link to your doc: ' + url;
+
+  // Send yourself an email with a link to the document.
+  GmailApp.sendEmail(email, subject, body);
+}
+        </pre>
+        <figcaption>
+            <strong>Listing 1</strong>: Beispiel Google Script: Spreadsheet erstellen und Link per Mail senden <a href="#r7">[7]</a>
+        
+        </figcaption>
+        </figure>
     </section>
     <section>
-    	<h2>3. Alternativen</h2>
-    	<h3>3.1. BitTorrent Sync</h3>
+    	<h3>2.2. Approach</h3>
     	<p>
-        Neben zusätzlichen Verschlüsselungssoftwares, die mit Cloud Diensten zusammen angewendet werden können, haben sich aber auch Dienste entwickelt, die auf
-        Serverspeicherung gänzlich verzichten, und dennoch die gleichen Vorteile versprechen. Zwar noch in der Beta Phase, aber trotzdem ein vielversprechendes Konzept,
-        präsentiert beispielsweise BitTorrent Sync. Hier werden Daten direkt zwischen Geräten synchronisiert. Dazu müssen diese in dem entsprechenden Sync Ordner
-        abgelegt werden, woraufhin ein 20 Byte langer Geheimschlüssel generiert wird. Über diesen Schlüssel können anschließend andere Geräte auf
-    	diese Daten zugreifen. Dies ermöglicht ebenfalls das Teilen von Daten mit Dritten. Mit Hilfe drei verschiedener Einstufungen der Geheimschlüssel, auch    <em>Secrets </em> genannt, 
-    	ist es möglich, Berechtigungen zuzuschreiben und sogar ein zeitliches Limit des Teilens zu setzen <a href="#r2">[2]</a>.
+            Connected Information regularly combine sorts and properties characterized either in in-house ontologies, or in broad existing ones e.g. FOAF4 , DC5 or GeoNames6 . It may happen, in spite of the fact that, that in-house ontologies have not been formalized, or are not disclosed. Indeed when the ontologies are accessible, they don't tell which relevant part of them is really utilized in a dataset, and what joins are drawn (through the information) between substances over different ontologies.
+            Knowing these points of interest about a dataset could be a pre-condition for assessing its adequateness for being reused in a certain setting, for assessing its substance, for coordination it with other (possibly bequest) information; in other words, for utilizing it. We hypothesize that employing KPs for dissecting and conceivably writing LD addresses this problem. In this paper, we center on questioning a dataset when its lexicon is previously unknown, by continuing as takes after as first 
+            we characterize a strategy and an metaphysics for analyzing a dataset and producing a union of it i.e. a measured reflection named dataset information design, that highlights how a dataset information is organized, and what its core information components (e.g. central sorts and related KPs) are; and then 
+            we appear how this common strategy and cosmology can be misused for recognizing vital KPs extricated from a dataset for creating prototypical queries, through which we are ready to recover a dataset center information.
     	</p>
     	<p>
-        Ein entscheidender Vorteil ist, dass durch dieses Prinzip keine Einschränkung des zu verfügbaren Speicherplatzes seitens des Anbieters stattfindet. Dieser
-        richtet sich nach der eigenen Kapazität. Außerdem entstehen keine Fragen bezüglich des Standortes der Server und damit folgenden unterschiedlichen
-        Datenschutzrichtlinien, da die Daten nur auf den eigenen Geräten gespeichert werden. Gerade in Hinblick auf die Abhörskandale der NSA und auch des BND
-        stößt dies auf große Begeisterung:
+            A information design (KP) for a sort in an RDF chart incorporates: (i) the properties by which occurrences of this sort relate to other people; (ii) the sorts of such people for each property. A KP is an invariance across observed information or objects that permits a formal or cognitive translation [4]. A KP implants the key relations that portray a significant piece of information in a certain space of intrigued, comparative to etymological outlines and cognitive schemata.
     	</p>
     	<p>
-        „That difference in design means that people using Bittorrent Sync don’t have to worry about whether the cloud company hosting their data is properly
-        securing it against rogue employees or other threats. Forgoing the cloud also means that data shared using Bittorrent Sync could be harvested by the NSA or
-        another agency only by going directly to the person or company controlling the synced devices”<a href="#r11">[11]</a>.
+            A path is an requested type-property arrangement that can be navigated in an RDF chart. Note the utilize of sorts in lieu of their occasions, which instep denote multiple events of the same way. The length of a way is the number of properties included (conceivably indeed with redundancies).
+            <a href="#r1">[1]</a>.
     	</p>
     	<p>
-        Die Kommunikation zwischen zwei Geräten ist über den AES-128 Algorithmus verschlüsselt. Zudem wird das P2P Protocol verwendet. Trotz Beta Phase 
-    	erstreckt sich das Angebot der Desktop Version bereits über Windows, Mac und Linux, und auch die Unterstützung mobiler Geräte deckt Android, iOS, Windows
-        Phone und den Kindle Fire ab <a href="#r2">[2]</a>.
+            Our approach employments a procedure pointed at displaying, reviewing, and summarizing Connected Information sets, in this manner drawing what we call their information architecture, which depends on the ideas of ways and KPs characterized over. The application of this approach is outlined in Figure 1, and can be synthesized as takes after:
+            <p>
+                1. Accumulate property utilization insights for a chosen dataset and store them as a box of the knowledge design ontology;
+                2. Inquiry the dataset for extricating ways. Store all ways with length up to 4, with their utilization insights, within the information design dataset ;
+                3. Distinguish central sorts and central properties based on their frequencies in a key position in ways, i.e. betweenness, and number of instantiations;
+                4. Extricate developing KPs based on the dataset’s central sorts and properties;
+                5. Select clustering factors among central properties, i.e. those properties involving the same position in a set of ways, and build path clusters;
+            </p>
+            The following area outlines how the components of a dataset knowledge architecture are built for performing the steps of our strategy.
+         <a href="#r4">[4]</a>.
+    	</p>
+    </section>
+
+    <section>
+    	<h2>3. Methods and Datasets</h2>
+    	<h3>3.1. The Knowledge Architecture</h3>
+    	<p>
+            A dataset knowledge design is an ontology that communicates a dataset vocabulary in a secluded way. Its components are chosen based on measures that demonstrate their significance in capturing the center information in a dataset. In other words, it is an deliberation over an RDF chart, which offers a modular view as restricted to the normal “class-property” see given by vocabularies and ontologies, since it is open to questions that are skeptic to particular sorts and properties utilized within the dataset.
+            <a href="#r2">[2]</a>.
     	</p>
     	<p>
-        Ein für diese Technik spezifischer Nachteil ist allerdings die Voraussetzung, dass zur Synchronisation die entsprechenden Geräte angeschaltet sein müssen<a href="#r11">[11]</a>.
-    	Sollte die Verbindung zu einem Zeitpunkt der Übertragung abbrechen, wird diese jedoch an der entsprechenden Stelle wieder fortgesetzt, sobald
-        beide Geräte wieder online sind<a href="#r6">[6]</a>.
+            To populate it, we review a dataset for (i) the types and properties it employments, (ii) its ordinary ways i.e. type-property sequences, and (iii) quantitative insights approximately their utilization. The information architecture schema is accessible online8 . This formalism permits us to experimentally dissect a dataset engineering through SPARQL inquiries.
+    	</p>
+    	<p>
+            Figure 2 portrays the most substances characterized by the dataset knowledge architecture philosophy. With the assistance of this ontology, we point at determining, in a bottom-up way, the philosophy really utilized for speaking to the data in a LD dataset and create extra useful knowledge around a dataset e.g., its central types. We distinguish (i) the properties used in a dataset triples, and demonstrate them through the class Property; (ii) the types (classes or literals) of the subject and question assets of such triples, and model them through the lesson Sort; and (iii) the typical ways that connect triples in a dataset, and demonstrate them through the class.
+            <a href="#r11">[11]</a>.
+    	</p>
+    	<p>
+            A Path is an requested set {T1, p1, ..., pl , Tl+1}, where Ti is a Type, pi is a property, and l is the path length. Each requested subset {Ti , pi , Ti+1} of a Path of length l is called PathElement, and is related with its position i = 1, ..l, within the path.
+            <a href="#r2">[2]</a>.
+    	</p>
+    	<p>
+            We at that point characterize four properties portraying PathElement: hasProperty, hasPosition, hasPathElementObjectType and hasPathElementSubjectType. Each Way is associated to an occurrence of PathOccurrencesInDataset, which demonstrates the observed number of events of that way in a Dataset.
+
+            We too characterize the concepts CentralType and CentralProperty, which distinguish the substances capturing most of the information in a dataset. The sort KnowledgePattern is utilized for putting away the rising information designs.
+            <a href="#r6">[6]</a>.
     	</p>
 	</section>
     <section>
-    	<h3>3.2 ownCloud</h3>
+    	<h3>3.2 The Knowledge Dimentions</h3>
         <p>
-        Wer dennoch lieber eine Cloud zur Hand haben und trotzdem auf einen kommerziellen Anbieter verzichten möchte, hat die Möglichkeit mit ownCloud sich selber
-        eine Cloud aufzusetzen. Zuerst vorgestellt in 2011, erfreut sich diese Software heute recht großer Beliebtheit. Nach eigenen Angaben nutzen mehr als 1,3 Millionen
-        Anwender diesen Service <a href="#r10">[10]</a>. Und tatsächlich finden sich zahlreiche Anleitungen im Internet, wie man sich zu Hause mit Hilfe eines Raspberry Pis
-        und ownCloud selber eine Cloud basteln kann <a href="#r12">[12]</a> <a href="#r9">[9]</a> <a href="#r5">[5]</a>.
+            The measures that we relate to the knowledge architecture of a dataset to experimentally examine and translate them to back our conclusive articulations. Measures from #Triples to #PathOcc hold for a dataset as an entirety, whereas the others are related to a type or property and can be computed either for one dataset or over numerous datasets. Most of the measures have been computed by combining SPARQL questions and software scripting.
+            <a href="#r5">[5]</a>.
     	</p>
     	<p>
-        Die Vorteile sind schnell zusammengefasst: Erstens orientiert sich die Speicherkapazität, ebenso wie bei BitTorrent Sync, an den eigenen Gegebenheiten. Der
-        Vorteil gegenüber dem Konzept von BitTorrent Sync ist allerdings, dass durch die Zwischenspeicherung der Daten, kein anderes Gerät als das auf dem die
-        Daten gewollt sind online sein muss. Vor allem aber ist der Ort der gespeicherten Daten selbst bestimmt.
-    	</p>
+            The measures for recognizing the central types and properties of a dataset are additionally showed up. Type betweenness and Property betweenness are rearrangements of centrality measures utilized in graph theory. In show disdain toward of the reality that we do not appear the knowledge design of a dataset as a chart, its structure approximates it through the thought of coordinated ways and based on the exploratory perception that all ways longer than 3 are composed of the watched shorter ways.
+        </p>
     	<p>
-        Jedoch ganz ohne Schattenseite ist auch diese Alternative nicht. Gewisse Kenntnisse über Server, Netzwerke und Sicherheitsprotokolle sollten vorhanden sein
-        <a href="#r5">[5]</a>. Zudem ist die Hochverfügbarkeit, wie sie bei Dropbox oder Google herrscht, nicht gewährt.
+            Ready to at that point compute betweenness of types by tallying the interest of types as subjects in ways of length 2 at position 2, and betweenness of properties by checking the participation of properties in ways of length 3 in position 2.
+            The combination of betweenness values and number of occurrences indicates the esteem of centrality of a type or property for a dataset. Central types and properties are able to capture most of the knowledge communicated in a dataset.
     	</p>
+        <p>
+            There are many measures to extract knowledge Dimentions such as Triples which indicates number of triples that constitute a dataset and it is computed by summing up the all PropertyUsageInDataset in triples.
+            The other measure is Props which indicates number of used properties in a dataset and it is calculated by counting all PropertyUsageInDataset.
+            The next is Types which shows number of used types and it is computed by Cardinality of the union set of types related to PathElement with either hasPathElementSubjectType or hasPathElementObjectType. 
+            Then we have Paths which indicates the number of observed paths of length 2 to 4 and this is computed by Count paths of length n for n = 2...4.
+            In the list next we have PathOcc which indicates observed occurrences of paths up to length 4 and it is calculated as sum of the values of hasNumberOfOccurrences of paths of length n, n = 2...4.
+            The next measure we have is Property usage in path which shows Sparseness indicator of a dataset knowledge architecture and it is computed by dividing the number of properties that participates in paths of length n by the total number of used properties, with n = 2...4.
+            Then the other one is Type betweenness which indicates The capability of a type to catch meaningful knowledge and it is calculated by counting the number of paths of length 2 in which a type participate in at position 1 with subject role.
+            Similar to this, the next we have Property betweenness, it shows The capability of a type to catch meaningful knowledge. It is computed by counting the number of paths of length 3 in which a property participates at position 2.
+            And the last one we have Triples for property which indicates Number of triples instantiating a property and computed by getting the  value of hasNumberOfTriples for PropertyUsageInDataset about a property.
+            So these are the Measures of dataset measurements and characteristics in terms of number of triples, number of sorts and properties utilized, number of ways of length 2 to 4, number of events of ways of length 2 to 4, and property utilization in ways of length 2 to 4.
+        </p>
 	</section>
     <section>
     	<h2>4. Demo ownCloud</h2>
@@ -242,5 +269,3 @@
     		<p class="reference" id="r12">[12] Thoma, Jörg (2014, April 15). OwnCloud - Dropbox Alternative fürs Heimnetzwerk [Online]. Available <a href="http://www.golem.de/news/owncloud-dropbox-alternative-fuers-heimnetzwerk-1404-105843.html">http://www.golem.de/news/owncloud-dropbox-alternative-fuers-heimnetzwerk-1404-105843.html</a> (29.06.2014)</p>
     		<p class="reference" id="r13"> [13] eigene aufgesetzte ownCloud </p> 
 	</section>
-</body>
-</html>
