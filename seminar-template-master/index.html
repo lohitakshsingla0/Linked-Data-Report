@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seminar Web Engineering in Summer Semester 2022 - Extracting Contentual Knowledge from Linked Data</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <header>
+        <h2>Seminar Web Engineering in Summer Semester 2022</h2>
+		<h1>Extracting Contentual Knowledge From Linked Data</h1>
+        <h2 class="author">Anjali Gupta and Lohitaksh Singla</h2>
+		<h3 class="affiliation">
+			Master's Student of Web Engineering<br/>
+			Technical University Of Chemnitz<br/>
+			Chemnitz, Germany
+		</h3>
+    </header>
+    <section>
+    	<h2>1. Introduction</h2>
+        <p> 
+    		The steady development drift of Linked Data (LD) is broadening the potential expansion of datasets for improving the search engine available on the web, where, the accessibility of information in Semantic Web groups such as RDF and OWL has also expanded. By the by, the information that is right now accessible constitutes fair a division of existing data that can be uncovered and conveyed as RDF and OWL. Current investigation and built-up Web look firms like Google and Powerset are advantages of utilizing unequivocal semantics and LD to refine look results.
+    	</p>
+    	<p>
+    		As the Net of Information, imagined by Tim Berners Lee1, gains energy, the request to extricate information and to “triplify” information is consistently expanding, particularly within the ranges of commerce, science, and government. The “triplication” handle, be that as it may, is because of the diverseness of data and data models challenging. Even though apparatuses exist to back the era of RDF from bequest sources, a few deterrents stay for computerized approaches. These barriers and cost variations consists of : pointing out of private and public data, proper reuse of existing vocabularies, missing schema descriptions, and URI generation.
+            <a href="#r3">[3]</a> 
+    	</p>
+    	<p>
+            The best source of LD is Wikipedia, which has its own DBPedia where all the linked data keywords are stored in a structured way that is accessible via various tools and methods. The is no manual extraction of data from normal text to RDF format, hence we will discuss the definition of knowledge extraction first and understand the concept. Further, we how to extract Linked data from structured sources and the terms used in them.
+        </p>
+	</section>
+    <section>
+    	<h2> 2. Knowledge Extraction</h2>
+        <h3>2.1. Linked Data</h3>
+        <p>
+            In outline, Linked Data is essentially almost utilizing the Internet to make written joins between data from diverse sources shown in Figure 1. These may be as assorted as databases kept up by two organizations in numerous topographical areas, or essentially heterogeneous frameworks within one association that, historically, have not effectively interoperated at the information level. Technically, Linked Data alludes to data distributed on the Net in such a way that it is machine-readable, its meaning is expressly characterized, it is connected to other outside information sets, and can in turn be connected to from outside information sets. 
+             <a href="#r4">[4]</a>    
+        </p>
+        <p>
+            Whereas the essential units of the hypertext Web are HTML (HyperText Markup Language)documents associated with untyped hyperlinks, Linked Data depends on records containing data in RDF (Asset Depiction System) arrange (Klyne and Carroll, 2004). However, rather than essentially interfacing these reports, Linked Data utilize RDF to form typed statements that interface subjective things within the world. The result, which we are going allude to as the Web of Information, may more accurately be portrayed as a web of things within the world, described by data on the Internet.            
+            <a href="#r1">[1]</a>
+        </p>
+        <figure>
+            <img src="DBPedia.png" alt="Liste aller Benutzer"/>
+            <figcaption>
+              <strong>Figure 1</strong>: Linking Open Data cloud chart giving an outline of distributed data collections and their interlinkage connections. <a href="#r1">[1]</a>.
+            </figcaption>
+          </figure>
+    	<h3> 2.2. Defination of Knowledge Extraction</h3>
+    		
+    	<p>
+            Knowledge extraction is defined as the creation of information from organized sources like XML or relational databases and unstructured sources like content, archives, or pictures. The coming about information has to be in a machine-readable and machine-interpretable arrange and must speak to information in a way that encourages inferencing. Even though it is deliberately comparable to data extraction (NLP) and ETL (information distribution center), the most measure is that the extraction result goes past the creation of organized data or the change into a social pattern. It consists of either the reclaiming of existing information or the era of a pattern based on the origin of the information.           
+             <a href="#r5">[5]</a>.
+    	</p>
+    	<p>
+            In show disdain toward the reality that the term data extraction is broadly utilized inside the composing, no studies exist that have succeeded in making a framework to cover unstructured as well as organized sources or allow a clear definition of the basic “triplication“ get ready and the required prerequisites. Other frameworks and overviews as well as individual approaches especially require the taking after points such as clear boundaries to existing examination districts such as Information Extraction (Content Mining), Extract-Transform-Load (Data Stockroom), and Cosmology Learning have not in any case been built up. Such boundaries are characterized by expressing unmistakable criteria conjointly by demonstrating the meaning of information w.r.t. the foremost data appear that concerns RDF and OWL format. The next point will be The thought that ”knowledge“ is removed has not been well-defined. Even though RDF and OWL can serve as data representation formalisms, the simple utilization of RDF/OWL as an organization can not satisfactorily characterize the thought of ”knowledge“. The foremost queries are: “What is the outcome of a simplification process?” “Structured data or talked to knowledge?”, “When does organized data get to be knowledge?”. And then in show disdain toward the reality that, the extent of extraction of RDF from social databases has been examined broadly, approaches were scarcely comparable to extraction procedures utilized on other sources, in this way maintaining a strategic distance from theory. In the last, most of the methods function by distinct utilize cases which outcomes specific source of data and needed the alter in RDF and, hence, are lost a more common see on the issue. The foremost asking was: “What are the attributes of this type of transformation?” and “How they are different from past efforts?”            
+            <a href="#r2">[2]</a>.
+    	</p>
+    	<p>
+            The RDF and the OWL, information demonstrate, the ability to distinguish two distinctive criteria for distinguishing Information Extraction forms: Reusing identifiers. (1) created RDF data that is universally special and meaningful. In Rory's case FOAF3, if de-facto standards are reused, at that point the extracted RDF can be linked to other information. (2) owl:sameAs or owl: equivalent class connecting extricated substances to existing entities within the Web of Information.
+            	</p>
+        <p>
+            Construction era. The construction era from bequest sources is a loose shape of knowledge extraction when contrasted to new identifiers. Even though pecking orders maxims of shifting expressivity are built no disambiguation is made by connecting the classes to ontologies. The connection of the created scientific classification of terms remains vague and requires strategies from the field of cosmology matching to end up a portion of the worldwide arrange of information.
+            </p>	
+       
+    </section>
+    <section>
+    	<h3>2.3. Approach</h3>
+    	<p>
+            Connected Information regularly combines sorts and properties characterized either in in-house ontologies or in broad existing ones e.g. FOAF4, DC5, or GeoNames6. It may happen, even though, that in-house ontologies have not been formalized, or are not disclosed. Indeed when the ontologies are accessible, they don't tell which relevant part of them is utilized in a dataset, and what joins are drawn (through the information) between substances over different ontologies. Knowing these points of interest about a dataset could be a pre-condition for assessing its adequateness for being reused in a certain setting, for assessing its substance, for coordinating it with other (possibly bequest) information; in other words, for utilizing it. We hypothesize that employing KPs for dissecting and conceivably writing LD addresses this problem. In this paper, we center on questioning a dataset when its lexicon is previously unknown, by continuing as takes after as first, we characterize a strategy and metaphysics for analyzing a dataset and producing a union of it i.e. a measured reflection named dataset information design, that highlights how dataset information is organized, and what its core information components (e.g. central sorts and related KPs) are; and then we appear how this common strategy and cosmology can be misused for recognizing vital KPs extricated from a dataset for creating prototypical queries, through which we are ready to recover a dataset center information.
+        </p>
+    	<p>
+            A knowledge pattern(KP) for a sort in an RDF chart incorporates: (i) the properties by which occurrences of this sort related to other people; (ii) the sorts of such people for each property. A knowledge pattern is unalterable among observed information or objects which permits a cognitive translation [4]. A KP implants the key relations that portray a significant piece of information in a certain space of intrigued, comparative to etymological outlines and cognitive schemata.
+            <a href="#r2">[2]</a>.      
+        </p>
+    	<p>
+            A path is a requested type-property arrangement that can be navigated in an RDF chart. Note the utilization of sorts instead of their occasions, which instep denote multiple events of the same way. The length of a way is the number of properties included (conceivably indeed with redundancies).
+        </p>
+    	<p>
+        Our approach employments a procedure pointed at displaying, reviewing, and summarizing Connected Information sets, in this manner drawing what we call their information architecture, which depends on the ideas of ways and KPs characterized over. The application of this approach is outlined in Figure 2 and can be synthesized as takes after following steps like
+        </p>    
+            <p>
+                First, we will accumulate property utilization insights for a dataset and save it as a box that contains the knowledge design ontology; Secondly, we will query the dataset for extricating ways. Store all ways with lengths up to 4, with their utilization insights, within the information design dataset; In the Third step we will distinguish middle sorts and central properties based on their iterations at positions of a key in ways; Then in the fourth step we will extricate developing KPs for dataset’s central sorts and properties; and lastly, in the fifth step we will select bunching factors from focal properties, i.e. those properties involving the same position in a set of ways, and build path clusters;
+            </p>
+            So the following area outlines how the components of a dataset knowledge architecture are built for performing the steps of our strategy.
+         <a href="#r2">[2]</a>.
+    	</p>
+        <figure>
+            <img src="Approach.png" alt="Liste aller Benutzer"/>
+            <figcaption>
+              <strong>Figure 2</strong>: 
+              Linked Data examination system Side bolts indicate whether the dataset or on the other hand the knowledge architecture is being gotten to for perusing or composing on each step <a href="#r2">[2]</a>.
+            </figcaption>
+          </figure>
+    </section>
+    
+    <section>
+    	<h2>3. Knowledge Architecture and Dimensions</h2>
+    	<h3>3.1. The Knowledge Architecture</h3>
+    	<p>
+            A dataset knowledge design is an ontology that communicates a dataset vocabulary in a secluded way. Its components are chosen based on measures that demonstrate their significance in capturing the center information in a dataset. In other words, it is a deliberation over an RDF chart, which offers a modular view as restricted to the normal “class-property” see given by vocabularies and ontologies, since it is open to questions that are skeptical of particular sorts and properties utilized within the dataset.
+        </p>
+    	<p>
+            To populate it, we review a dataset for (i) the types and properties it employments, (ii) its ordinary ways i.e. type-property sequences, and (iii) quantitative insights approximately their utilization. The information architecture schema is accessible online8. This formalism permits us to experimentally dissect a dataset engineering through SPARQL inquiries.
+        <a href="#r2">[2]</a>.
+        </p>
+    	<p>
+            Figure 3 portrays the most substances characterized by the dataset knowledge architecture philosophy. With the assistance of this ontology, we point at determining, in a bottom-up way, the philosophy utilized for speaking to the data in an LD dataset and creating extra useful knowledge around a dataset e.g., its central types. We recognize first the properties utilized in a dataset triple significantly increase, and exhibit them through the class Property; second the types (literals or classes) of the subject and question resources of such triples, and model them through the example Sort; and third, the run of the mill ways that interface significantly increases in a dataset, and show them through the class.
+            <a href="#r2">[2]</a>.
+    	</p>
+    	<p>
+            A Path is an requested set {T1, p1, ..., pl , Tl+1}, where Ti is a Type, pi is a property, and l is the path length. Each requested subset {Ti , pi , Ti+1} of a Path of length l is called PathElement, and is related with its position i = 1, ..l, within the path.
+            <a href="#r2">[2]</a>.
+    	</p>
+    	<p>
+            We at that point characterize four properties portraying PathElement: hasProperty, hasPosition, hasPathElementObjectType and hasPathElementSubjectType. Each Way is associated with an occurrence of PathOccurrencesInDataset, which demonstrates the observed number of events of that way in a Dataset.
+
+            We also describe the ideas CentralType and CentralProperty, which recognize the substances catching the vast majority of the data in a dataset. The sort KnowledgePattern is utilized for putting away the rising information designs. 
+            <a href="#r2">[2]</a>.
+    	</p>
+        <figure>
+            <img src="Knowledge_Architecture.png" alt="Liste aller Benutzer"/>
+            <figcaption>
+              <strong>Figure 3</strong>: 
+              Outline of the knowledge architecture ontology. Property circular segments indicate either class limitations or domain/range matches across their nodes. <a href="#r2">[2]</a>.
+            </figcaption>
+        </figure>
+	</section>
+    <section>
+    	<h3>3.2 The Knowledge Dimentions</h3>
+        <p>
+            The measures that we relate to the knowledge architecture of a dataset to experimentally examine and translate them to back our conclusive articulations. Measures from #Triples to #PathOcc hold for a dataset as an entirety, whereas the others are related to a type of property and can be computed either for one dataset or over numerous datasets. Most of the measures have been computed by combining SPARQL questions and software scripting.
+    	</p>
+    	<p>
+            The measures for recognizing the central types and properties of a dataset are additionally showed up. Type betweenness and Property betweenness are rearrangements of centrality measures utilized in graph theory. In show disdain toward of the reality that we do not appear the knowledge design of a dataset as a chart, its structure approximates it through the thought of coordinated ways and based on the exploratory perception that all ways longer than 3 are composed of the watched shorter ways.        </p>
+    	<p>
+            Prepared to then register betweenness of types by counting the interest of types as subjects in methods of length 2 at position 2, and betweenness of properties by checking the cooperation of properties in methods of length 3 in the position.
+            The blend of several occurrences and betweenness values demonstrates the regard for the centrality of a kind of property for a dataset. Central properties and types can catch the vast majority of the knowledge conveyed in a dataset.
+            <a href="#r2">[2]</a>.
+    	</p>
+        <p>
+            There are many measures to extract knowledge Dimensions such as Triples which indicates the number of triples that constitute a dataset and it is computed by summing up all PropertyUsageInDataset in triples.
+            The other measure is Props which indicates several used properties in a dataset and it is calculated by counting all PropertyUsageInDataset.
+            The next is Types which shows several user types and it is computed by Cardinality of the union set of types related to PathElement with either hasPathElementSubjectType or hasPathElementObjectType. 
+            Then we have Paths which indicates the number of observed paths of length 2 to 4 and this is computed by Count paths of length n for n = 2...4.
+            In the list next, we have PathOcc which indicates observed occurrences of paths up to length 4 and it is calculated as the sum of the values of hasNumberOfOccurrences of paths of length n, n = 2...4.
+            The next measure we have is Property usage in the path which shows the Sparseness indicator of a dataset knowledge architecture and it is computed by dividing the number of properties that participates in paths of length n by the total number of used properties, with n = 2...4.
+            Then the other one is Type betweenness which indicates The capability of a type to catch meaningful knowledge and it is calculated by counting the number of paths of length 2 in which a type participate at position 1 with the subject role.
+            Similar to this, next we have Property betweenness, which shows The capability of a type to catch meaningful knowledge. It is computed by counting the number of paths of length 3 in which a property participates at position 2.
+            And the last one we have Tripled for property which indicates the Number of triples instantiating a property and computed by getting the value of hasNumberOfTriples for PropertyUsageInDataset about a property.
+            So these are the Measures of dataset measurements and characteristics in terms of number of triples, number of sorts and properties utilized, number of ways of length 2 to 4, number of events of ways of length 2 to 4, and property utilization in ways of length 2 to 4.
+        </p>
+	</section>
+    <section>
+    	<h3>3.3 Linked Data Extraction from Structures Source(RDB2RDF)</h3>
+        <p>
+            The mapping of relational data to the RDF model demonstrates could be a pivotal information extraction method. Since the executives of data concerning social information model are still quicker than RDF data and we don't guess this hole to close, social information the executives will be predominant in the forthcoming years. Still, for encouraging information trade and integration it is of vital importance to supply RDF and SPARQL interfacing to RDBMS. Around here, we show SparqlMap5, a SPARQLto-SQL rewriter in light of the conclusions of the W3C R2RML working group6. The basis is to empower SPARQL inquiries on (conceivably existing) social databases by revamping them to compare SQL questions based on mapping definitions. The standard methodology is depicted in Figure 4. In pith, the R2RML standard illustrates how a social database can be changed into RDF by implying term maps and triple maps (1). The approach to the RDF database can emerge in a triple store and in this way addressed using SPARQL (2). In arrange to dodge the materialization step, R2RML executions can powerfully outline an input SPARQL inquiry into a comparing SQL inquiry (3), which renders precisely the same comes about as the SPARQL inquiry being executed against the materialized RDF dump.
+            <a href="#r3">[3]</a>.       
+        </p>  
+
+        <figure>
+            <img src="rdbToRdf.png" alt="Liste aller Benutzer"/>
+            <figcaption>
+              <strong>Figure 4</strong>: 
+              Knowledge Extraction and Query Rewriting <a href="#r3">[3]</a>.
+            </figcaption>
+        </figure>
+
+    	<p>
+            SparqlMap is such helpfulness practically identical to D2R, a best-in-class independent SPARQLto-SQL interpretations device. SparqlMap is more arranged as an independent application for empowering lightweight integration into the data scenes of an existing enterprise. Contrasted with D2R we focus on playing out all questions inside the social data set in one query. D2R mixes in-data set and out-of-date set tasks, performing activities like AND or (a couple) channels inside the data set, though others like OPTIONAL or UNION are executed in D2R on center outcome sets from the data set. The brought-together question methodology ensures versatility since costly roundabout excursions between the RDBMS and the mapper are diminished and use the inquiry streamlining and execution of the RDBMS. We run an evaluation with the Berlin Sparql Benchmark (BSBM) contrasting D2R and SparqlMap and the comes about shown on the venture site. The common perception is that SparqlMap outflanks D2R for questions where the SQL produced by D2R comes about in colossal intermediate result sets. To the leading of our information, no nitty-gritty or formalized depiction of a mapping-based SPARQL-to-SQL interpreter exists. In this segment, we can show a diagram over SparqlMap which is organized as takes after. We formalize the mapping and inquiry language structure. The process of modifying an inquiry on mapping is laid out the taking three steps:       
+            <a href="#r3">[3]</a>.    
+        </p>
+        
+        <h4>3.3.1 Mapping candidate determination </h4>
+        <p>
+            As the introductory step of the method, how candidate mappings are recognized with mapping candidate selection. These are mappings that possibly contribute to the query’s result set. Informally, typically the set of mappings that abdicate triples that seem to coordinate the triple patterns of the Query. The relation between the candidate mappings and the triple designs is called binding.
+            <a href="#r3">[3]</a>.                
+        </p>
+
+        <h4>3.3.2 Query translation </h4>
+        <p>
+            The distinguished candidate mappings and the obtained bindings empower us to rewrite a SPARQL query, to an SQL query, this preparation can be depicted query translation.
+            <a href="#r3">[3]</a>.     
+        </p>
+
+        <h4>3.3.3 Query execution </h4>
+        <p>
+            With the help of mapping candidate selection, we see how from the SQL result set of the executed SQL request the contrasting SPARQL result set is developed.
+            <a href="#r3">[3]</a>.     
+        </p>          
+	</section>
+    <section>
+    	<h3>3.4. Challenges to generate RDF </h3>
+        <section>
+            <h4>3.4.1. Identification of public and private data </h4>
+            <p>
+                Inheritance sources persistently contain data which should not be made open on the Internet, for example, email addresses, passwords or concentrated setups and parameters. Automatically distinguishing between entirely private, critical and less significant data is exceptionally difficult, in case not outlandish.
+                <a href="#r3">[3]</a>.    
+            </p>
+        </section>
+        <section>
+            <h4>3.4.2. Legitimate reuse of existing vocabularies</h4>
+            <p>
+                Indeed the foremost explained approaches to ontology mapping come up short in creating certain mappings between the legacy information (e.g. database entities, for example, column names and table) and existing RDF vocabularies, because of missing machine-comprehensible portrayals of the space semantics inside the data set development.
+                <a href="#r3">[3]</a>.    
+            </p>
+        </section>
+        <section>
+            <h4>3.4.3. Lost schema depictions</h4>
+            <p>
+                Numerous legacy sources do not one or the other give appropriate documentation nor broad pattern definition (e.g. MySQL doesn't contain definitions for constraints or foreign keys, XML data type definition just gives information practically the legitimacy of the data, however not around the semantics). Syntactic approaches for recognizing construction depictions are likely to fall flat, since mappings were regularly developed developmental and naming conventions are not upheld. Generally speaking, the construction of the data should be genuinely switch worked by a domain specialist, who has a comprehension of the domain as well as the content.
+                <a href="#r3">[3]</a>.    
+            </p>
+        </section>
+        <section>
+            <h4>3.4.4. Universal Resource Identifier Generation</h4>
+            <p>
+                The nature of inheritance data sources do every now and again not coordinate the prerequisites for RDF datatypes and URIs. Strings and terms should be standardized and cleaned to admit a progress to URIs. The decision which substances to use for identifiers (e.g. change over essential keys to URIs) isn't always obvious. It as often as possible relies upon the particular use case whether an information base section ought to be changed to a URI or a RDF strict.
+                <a href="#r3">[3]</a>.    
+            </p>
+        </section>
+	</section>    
+    <section>
+    	<h2>4. Knowledge Extraction Tools and Methods</h2>
+    	<p>
+            In this fragment, we summarize the delayed consequences of the Knowledge Extraction Tool Survey , which is in like manner available on the web. The Knowledge Extraction Tool Survey Cosmology (KETSO) is utilized for the arrangement of knowledge extraction devices. In the accompanying, we sum up the fundamental properties characterized in KETSO for the portrayal of tools. Note that a portion of the properties (for example Data Exposition also, Data synchronization) are not symmetrical (for example values "dump" also "static"), yet then again not reliant too (for example "SPARQL" can be "dynamic" or "bi-directional"). The flat modeling as single autonomous highlights creates no predisposition or encodes suspicions into the information and it is a lot simpler to add new qualities.
+            <a href="#r3">[3]</a>.    
+        </p>
+        <h4>4.1 Data exposition</h4>
+    <p>
+        Is SPARQL or another query language conceivable? Values can be either Linked Data, SPARQL (or another Query Language) or ETL (Dump). Accessing paradigm also determines if the subsequent RDF model updates naturally. ETL implies a one-time transformation, while Linked Data and SPARQL generally process questions versus the original database.
+        <a href="#r3">[3]</a>.    
+    </p>
+    <h4>4.2 Data source</h4>
+    <p>
+        The sort of the data source the mechanical assembly can be applied on RDB, XML, CSV, and so forth.
+        <a href="#r3">[3]</a>.    
+    </p>
+    <h4>4.3 Data synchronization</h4>
+    <p>
+        Is a dump made once or is the information queried live from the inheritance source? Static or Dynamic. Expecting the instrument creates the movements made to the RDF back to the legacy source it is bidirectional
+        <a href="#r3">[3]</a>.    
+    </p>
+    </section>
+    
+    <section>
+        <h2>5. Knowledge Extraction Processing Time</h2>
+        <p>
+            Handling Speed Knowledge Extraction framework can be either runtime tools or administrative center tools. That is, assuming that Knowledge Extraction framework is utilized as run time device, constant handling speed turns into a significant prerequisite of reasonable KE. Some Machine Learning algorithm utilizes deep analyse and optimisation, which is computational concentrated and furthermore tedious. The aftereffect of such calculations could be fulfilled. Yet, they become pragmatic not usable assuming the client needs to sit tight for result over a few hours, even days. Then again, a few methods perform fast handling yet terrible outcome execution. An equilibrium point between result execution (Precision and Recall) and handling time execution should be researched.
+        </p>
+    </section>
+
+    <section>
+        <h2>6. Conclusion</h2>
+        <p>
+            Knowledge extraction plays a very important role for the bootstrapping, aslo further improvement and development of the Web Data.We concocted the meaning of the idea of knowledge extraction and the famous information models relational data and XML with RDF. We determined various attributes of knowledge extraction draws near and overviewed the cutting edge concerning apparatuses being accessible around there. Our outcomes revealed that most of the tools concentrate around extraction from database sources. The unique extraction (for example interpretation of SPARQL queries into queries on the basic data model), notwithstanding, is as yet testing and ETL approaches are common. With SparqlMap we introduced an execution of the relational database to "RDF mapping language" R2RML at present being normalized by the W3C. SparqlMap permits the powerful interpretation of a SPARQL query in light of planning into a solitary SQL query on the basic relational database. This will guarantee that we can profit from existing work in relational database query improvement.
+            <a href="#r3">[2,3]</a>.
+        </p>
+        <p>
+            Further advancements to SparqlMap, for example, support for the SPARQL REDUCED develop, which can help the execution of specific inquiries. The question age above in SparqlMap can be considerably decreased by empowering arranged SPARQL inquiries, where a SPARQL inquiry format is as of now precompiled into the relating SQL question layout and thusly repeating inquiries utilizing the format don't need to be deciphered any longer. A first assessment of SparqlMap with the Berlin SPARQL Benchmark (BSBM) showed a critical presentation improvement contrasted with the cutting edge. In any case, certain highlights that are especially trying for a RDB2RDF apparatus (like questions over the composition) are not piece of BSBM. We intend to perform thorough benchmarks and furthermore to assess SparqlMap with enormous scope certifiable information.   
+            <a href="#r3">[2,3]</a>.    
+        </p>
+    </section>
+    <section>
+        <h2>7. Acknowledgement</h2>
+        <p>
+            We would like to show our gratitude to our advisor Professor Valentin Siegert for his guidance and suggestion during the research which helped us to clear our doubts and kept the research on the track.
+        </p>
+    </section>
+
+	<section class="references">
+	   		<h2>8. References</h2>
+    		<p class="reference" id="r1">[1] Bizer, Christian & Heath, Tom & Berners-Lee, Tim. (2009). Linked Data: The Story so Far. International Journal on Semantic Web and Information Systems (IJSWIS). 5. 1-22. 10.4018/978-1-60960-593-3.ch008. Available: <a href="https://www.researchgate.net/publication/262599397_Linked_Data_The_Story_so_Far/citation/download">https://www.researchgate.net/publication/262599397_Linked_Data_The_Story_so_Far/citation/download</a></p>
+    		<p class="reference" id="r2">[2] BitTorrent Sync [Online]Valentina Presutti, Lora Aroyo, Alessandro Adamou, Balthasar Schopman, Aldo Gangemi, and Guus Schreiber: Extracting core knowledge from Linked Data. Available: <a href="http://iswc2011.semanticweb.org/fileadmin/iswc/Papers/Workshops/COLD/cold2011_submission_9.pdf"></a></p>http://iswc2011.semanticweb.org/fileadmin/iswc/Papers/Workshops/COLD/cold2011_submission_9.pdf
+    		<p class="reference" id="r3">[3] J¨org Unbehauen, Sebastian Hellmann, S¨oren Auer, and Claus Stadler: Knowledge Extraction from Structured Sources, Available: <a href="https://svn.aksw.org/papers/2012/SearchComputing_KnowledgeExtraction/public.pdf">https://svn.aksw.org/papers/2012/SearchComputing_KnowledgeExtraction/public.pdf</a></p>
+    		<p class="reference" id="r4">[4] Linked Data, In Wikipedia, Retrieved on 1 July,2022, from <a href="https://en.wikipedia.org/wiki/Linked_data">https://en.wikipedia.org/wiki/Linked_data</a></p>
+            <p class="reference" id="r5">[5] Knowledge Extraction, In Wikipedia, Retrieved on 1 July, 2022, from <a href="https://en.wikipedia.org/wiki/Knowledge_extraction">https://en.wikipedia.org/wiki/Knowledge_extraction</a></p>            
+	</section>
